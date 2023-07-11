@@ -131,6 +131,9 @@ def main():
     print(checkpoint_file_path)
     if args.cuda:
         t_model = torch.load(checkpoint_file_path)
+        t_model = CrysGNN(orig_atom_fea_len, nbr_fea_len, atom_fea_len=args.atom_fea_len, n_conv=5)
+        checkpoint = torch.load(checkpoint_file_path)
+        t_model.load_state_dict(checkpoint['state_dict'])
     else:
         t_model = torch.load(checkpoint_file_path, map_location=torch.device('cpu'))
 
