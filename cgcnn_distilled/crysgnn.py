@@ -90,7 +90,7 @@ class CrysGNN(nn.Module):
 
         self.fc_sg = nn.Linear(atom_fea_len, 230)   #230
 
-    def forward(self, atom_fea, nbr_fea, nbr_fea_idx,crystal_atom_idx,cuda_flag):
+    def forward(self, atom_fea, nbr_fea, nbr_fea_idx,crystal_atom_idx):
         # Encoder Part (Crystal Graph Convolution Encoder )
         atom_fea = self.embedding(atom_fea)
         for conv_func in self.convs:
