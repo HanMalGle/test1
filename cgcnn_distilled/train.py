@@ -153,6 +153,7 @@ def main():
 
     if args.cuda:
         model.cuda()
+        t_model.cuda()
 
     if args.is_log:
         path = 'results/' + str(current_date) + '/' + str(current_time)
