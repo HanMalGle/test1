@@ -127,7 +127,7 @@ def main():
     model = CrystalGraphConvNet(orig_atom_fea_len, nbr_fea_len,atom_fea_len=args.atom_fea_len,n_conv=args.n_conv,
                                 h_fea_len=args.h_fea_len,n_h=args.n_h,classification=True if args.task =='classification' else False)
 
-    checkpoint_file_path = args.t_path
+    checkpoint_file_path = args.t_pth
     print(checkpoint_file_path)
     if args.cuda:
         t_model = torch.load(checkpoint_file_path)
