@@ -142,7 +142,7 @@ class StructureData(Dataset):
         self.dmin = 0
         self.step = 0.2
         assert os.path.exists(root_dir), 'root_dir does not exist!'
-        atom_init_file = os.path.join('../atom_init.json')
+        atom_init_file = os.path.join('atom_init.json')
         assert os.path.exists(atom_init_file), 'atom_init.json does not exist!'
         self.ari = AtomCustomJSONInitializer(atom_init_file)
         self.gdf = GaussianDistance(dmin=self.dmin, dmax=self.radius, step=self.step)
